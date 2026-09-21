@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="GreenShip 内河船舶绿色航行智能评估与优化平台">
+  <title>{% block title %}GreenShip{% endblock %} · 绿色航行智能平台</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='16' width='64' height='64' fill='%2306192d'/%3E%3Cpath d='M9 38c9 0 10 7 19 7 10 0 11-7 27-7-4 12-13 18-24 18S13 50 9 38Z' fill='%2300e5a8'/%3E%3Cpath d='M30 9v28L15 31l15-22Zm4 7 16 15-16 6V16Z' fill='%235ed5ff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body data-page="{{ active }}">
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="GreenShip 首页">
+      <span class="brand-mark"><i></i><i></i></span>
+      <span><b>Green<span>Ship</span></b><small>绿色航行智能平台</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="打开导航" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a class="{{ 'active' if active == 'dashboard' }}" href="/">首页</a>
+      <a href="/#assessment">能源评估</a>
+      <a href="/#comparison">方案比较</a>
+      <a class="{{ 'active' if active == 'optimization' }}" href="/optimization">智能优化</a>
+      <a class="{{ 'active' if active == 'history' }}" href="/history">历史记录</a>
+      <a class="{{ 'active' if active == 'about' }}" href="/about">项目介绍</a>
+    </nav>
+    <div class="system-status"><span></span> 系统在线</div>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer><span>© 2026 GreenShip</span><span>上海海事大学 · “千企百港”社会实践项目</span></footer>
+  <div id="toast" class="toast" role="status"></div>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

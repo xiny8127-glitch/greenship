@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}历史航行记录{% endblock %}
+{% block content %}
+<section class="subpage-heading"><div><span class="kicker">VOYAGE ARCHIVE</span><h1>历史航行记录</h1><p>持续积累航行评估数据，追踪绿色运营表现。</p></div><a class="secondary-btn" href="/api/export/csv">导出 CSV ↓</a></section>
+<section class="history-summary metric-grid compact"><article class="metric-card cyan"><div><span>累计记录</span><strong id="history-count">0</strong><small>次</small></div></article><article class="metric-card green"><div><span>累计航程</span><strong id="history-distance">0</strong><small>km</small></div></article><article class="metric-card blue"><div><span>累计能源成本</span><strong id="history-cost">0</strong><small>元</small></div></article><article class="metric-card violet"><div><span>平均绿色指数</span><strong id="history-score">0</strong><small>分</small></div></article></section>
+<section class="card history-card"><div class="section-title"><div><span class="kicker">ALL RECORDS</span><h2>航行评估档案</h2></div><label class="search-field">⌕ <input id="history-search" placeholder="搜索船型或方案"></label></div><div class="table-wrap"><table><thead><tr><th>日期</th><th>船舶类型</th><th>航程</th><th>航速</th><th>能源方案</th><th>能源消耗</th><th>费用</th><th>CO₂</th><th>绿色指数</th></tr></thead><tbody id="history-body"><tr><td colspan="9" class="empty">正在读取记录…</td></tr></tbody></table></div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/main.js') }}"></script>{% endblock %}
