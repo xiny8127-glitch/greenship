@@ -1,0 +1,18 @@
+{
+  "region": "上海",
+  "diesel": 7.95,
+  "industrial": 0.82,
+  "shore": 0.68,
+  "updated_at": "2026-09-21 19:00",
+  "effective_date": "2026-09-11",
+  "notes": {
+    "diesel": "上海市 0 号柴油最高零售价",
+    "industrial": "上海工商业用电代表性综合估算价，实际价格随电压等级和峰谷时段变化",
+    "shore": "上海港岸电研究参考价，实际结算由港口、电费和服务费共同决定"
+  },
+  "sources": [
+    {"title": "上海市发展和改革委员会关于车用汽、柴油价格的通知（2026年9月11日）", "url": "https://fgw.sh.gov.cn/fgw_jggl/20260911/9aaae46f75e24072bfc5ac52742d2642.html"},
+    {"title": "上海市工商业分时电价政策", "url": "https://fgw.sh.gov.cn/fgw_jggl/20221216/e2652e3ab7ee49438d6e82af8880b160.html"},
+    {"title": "关于进一步推进长江经济带船舶靠港使用岸电的通知", "url": "https://cjjjd.ndrc.gov.cn/gongzuodongtai/quanweifabu/guanfangfabu/202107/t20210727_1292245.htm"}
+  ]
+}
