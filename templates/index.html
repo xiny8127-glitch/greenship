@@ -19,20 +19,20 @@
     <form id="assessment-form" novalidate>
       <div class="form-section"><h3>船舶参数</h3><div class="form-grid">
         <label class="wide">船舶类型<select name="ship_type"><option>内河集装箱船</option><option>内河散货船</option><option>客渡船</option><option>公务船</option></select></label>
-        <label>载货量 <span>t</span><input name="cargo_mass" type="number" min="0" step="any" inputmode="decimal" value="800" required></label>
-        <label>航程距离 <span>km</span><input name="distance" type="number" min="0.1" step="any" inputmode="decimal" value="30" required></label>
-        <label>平均航速 <span>km/h</span><input name="speed" type="number" min="0.1" step="any" inputmode="decimal" value="10" required></label>
-        <label>推进功率 <span>kW</span><input name="propulsion_power" type="number" min="0" step="any" inputmode="decimal" value="95" required></label>
-        <label>电池容量 <span>kWh</span><input name="battery_capacity" type="number" min="0" step="any" inputmode="decimal" value="520" required></label>
-        <label>当前 SOC <span>%</span><input name="soc_initial" type="number" min="0" max="100" step="any" inputmode="decimal" value="90" required></label>
-        <label>最低 SOC <span>%</span><input name="soc_min" type="number" min="0" max="100" step="any" inputmode="decimal" value="20" required></label>
-        <label>柴油消耗 <span>L/km</span><input name="diesel_consumption" type="number" min="0" step="any" inputmode="decimal" value="3.8" required></label>
-        <label class="wide">混动柴油占比 <span id="ratio-label">35%</span><input name="hybrid_diesel_ratio" type="range" min="0" max="100" step="0.1" value="35"></label>
+        <label>载货量 <span>t</span><input name="cargo_mass" type="number" min="0" step="1" inputmode="numeric" value="800" required></label>
+        <label>航程距离 <span>km</span><input name="distance" type="number" min="1" step="1" inputmode="numeric" value="30" required></label>
+        <label>平均航速 <span>km/h</span><input name="speed" type="number" min="1" step="1" inputmode="numeric" value="10" required></label>
+        <label>推进功率 <span>kW</span><input name="propulsion_power" type="number" min="0" step="1" inputmode="numeric" value="95" required></label>
+        <label>电池容量 <span>kWh</span><input name="battery_capacity" type="number" min="0" step="1" inputmode="numeric" value="520" required></label>
+        <label>当前 SOC <span>%</span><input name="soc_initial" type="number" min="0" max="100" step="1" inputmode="numeric" value="90" required></label>
+        <label>最低 SOC <span>%</span><input name="soc_min" type="number" min="0" max="100" step="1" inputmode="numeric" value="20" required></label>
+        <label>柴油消耗 <span>L/km</span><input name="diesel_consumption" type="number" min="0" step="1" inputmode="numeric" value="4" required></label>
+        <label class="wide">混动柴油占比 <span id="ratio-label">35%</span><input name="hybrid_diesel_ratio" type="range" min="0" max="100" step="1" value="35"></label>
       </div></div>
       <div class="form-section"><h3>航行环境</h3><div class="form-grid">
-        <label>水流速度 <span>km/h</span><input name="current_speed" type="number" min="0" step="any" inputmode="decimal" value="0.5"></label>
+        <label>水流速度 <span>km/h</span><input name="current_speed" type="number" min="0" step="1" inputmode="numeric" value="1"></label>
         <label>水流方向<select name="current_direction"><option value="downstream">顺流</option><option value="upstream">逆流</option></select></label>
-        <label>水深 <span>m</span><input name="water_depth" type="number" min="0.1" step="any" inputmode="decimal" value="4"></label>
+        <label>水深 <span>m</span><input name="water_depth" type="number" min="1" step="1" inputmode="numeric" value="4"></label>
         <label>航段数量<input name="segments" type="number" min="1" max="20" step="1" value="6"></label>
         <label class="wide">用电类型<select name="electricity_type"><option value="shore">岸电</option><option value="industrial">工业电</option></select></label>
       </div></div>

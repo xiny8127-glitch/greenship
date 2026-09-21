@@ -13,9 +13,9 @@ DEFAULTS = {
     "battery_capacity": 520.0,
     "soc_initial": 90.0,
     "soc_min": 20.0,
-    "diesel_consumption": 3.8,
+    "diesel_consumption": 4,
     "hybrid_diesel_ratio": 35.0,
-    "current_speed": 0.5,
+    "current_speed": 1,
     "current_direction": "downstream",
     "water_depth": 4.0,
     "design_cargo": 1000.0,
@@ -46,6 +46,27 @@ def validate_payload(payload: dict, optimization: bool = False) -> list[str]:
             values[key] = number(payload, key)
         except ValueError:
             errors.append(f"{labels[key]}必须是有效数字")
+    if errors:
+        return errors
+    integer_labels = {
+        "cargo_mass": "载货量", "distance": "航程", "speed": "航速",
+        "propulsion_power": "推进功率", "battery_capacity": "电池容量",
+        "soc_initial": "当前 SOC", "soc_min": "最低 SOC",
+        "diesel_consumption": "柴油单位航程消耗",
+        "hybrid_diesel_ratio": "混合动力柴油占比", "water_depth": "水深",
+        "segments": "航段数量", "current_speed": "水流速度",
+    }
+    if optimization:
+        integer_labels["design_cargo"] = "设计载重"
+        if payload.get("max_time") not in (None, ""):
+            integer_labels["max_time"] = "最大时间"
+    for key, label in integer_labels.items():
+        try:
+            value = number(payload, key) if key != "max_time" else float(payload[key])
+            if not value.is_integer():
+                errors.append(f"{label}只支持整数")
+        except (TypeError, ValueError):
+            errors.append(f"{label}必须是有效整数")
     if errors:
         return errors
     for key in ("distance", "speed", "water_depth"):

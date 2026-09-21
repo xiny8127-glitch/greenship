@@ -1,7 +1,7 @@
 const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const page=document.body.dataset.page;let latestResult=null;let charts=[];
-// 避免浏览器以 min 为步长基准误判整数；航段数量仍保持整数。
-$$('input[type="number"]').forEach(input=>input.name==='segments'?input.step='1':input.step='any');
+// 本项目输入参数统一使用整数，计算结果仍按模型保留小数。
+$$('input[type="number"]').forEach(input=>input.step='1');
 function toast(msg){const el=$('#toast');if(!el)return;el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2600)}
 function formData(form){return Object.fromEntries([...new FormData(form)].map(([k,v])=>[k,v===''?null:(form.elements[k]?.type==='number'||form.elements[k]?.type==='range'?Number(v):v)]).filter(([,v])=>v!==null))}
 function animateNumber(el,value,decimals=1){if(!el)return;const start=Number(el.textContent)||0,t0=performance.now();function tick(t){const p=Math.min((t-t0)/650,1),e=1-Math.pow(1-p,3);el.textContent=(start+(value-start)*e).toFixed(decimals);if(p<1)requestAnimationFrame(tick)}requestAnimationFrame(tick)}
