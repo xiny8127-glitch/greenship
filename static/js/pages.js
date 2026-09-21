@@ -1,5 +1,7 @@
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 let PRICES={diesel:7.95,industrial:0.82,shore:0.68};const EF={diesel:2.63,electric:0.5703};
+// 双重解除原生步长限制，让 65、65.1 等整数和小数都能直接参与计算。
+$$('input[type="number"]').forEach(input=>input.name==='segments'?input.step='1':input.step='any');
 let latest=null, charts=[];
 const n=(p,k)=>Number(p[k]||0), round=(v,d=2)=>Number(v.toFixed(d));
 function toast(message){const e=$('#toast');e.textContent=message;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}

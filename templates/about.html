@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %}项目介绍{% endblock %}
 {% block content %}
+<style>.about-grid.single{grid-template-columns:1fr}</style>
 <section class="about-hero"><span class="kicker">ABOUT GREENSHIP</span><h1>以数据与算法，驱动<br><span>内河航运绿色转型</span></h1><p>GreenShip 将船舶运行参数、能源价格、碳排因子、航行环境与智能优化算法连接为一套可执行的绿色航行决策流程。</p></section>
 <section class="flow-card card"><div class="flow-step"><b>01</b><span>数据输入</span><small>船舶 · 航线 · 环境</small></div><i>→</i><div class="flow-step"><b>02</b><span>能源计算</span><small>柴油 · 电力 · 混动</small></div><i>→</i><div class="flow-step"><b>03</b><span>碳排评估</span><small>成本 · 排放 · 减排</small></div><i>→</i><div class="flow-step"><b>04</b><span>方案比较</span><small>指标 · 评分 · 推荐</small></div><i>→</i><div class="flow-step"><b>05</b><span>航速优化</span><small>差分进化算法</small></div></section>
-<section class="about-grid"><article class="card"><span class="kicker">BACKGROUND</span><h2>项目背景</h2><p>随着内河航运绿色低碳转型，纯电动船舶、岸电、混合动力等新能源技术逐渐进入规模化应用阶段。运营者需要的不只是静态指标，而是能结合真实航线条件、能源价格和船舶状态的动态决策工具。</p><p>GreenShip 希望让每次航行都拥有可量化、可比较、可优化的绿色依据。</p></article><article class="card research-card"><span class="kicker">RESEARCH PROJECT</span><h2>《基于智能优化的内河纯电动船舶绿色航行研究》</h2><dl><div><dt>所属单位</dt><dd>上海海事大学</dd></div><div><dt>项目计划</dt><dd>“千企百港”社会实践项目</dd></div><div><dt>核心方法</dt><dd>能源建模 · 碳排评估 · 差分进化优化</dd></div></dl></article></section>
+<section class="about-grid single"><article class="card research-card"><span class="kicker">RESEARCH PROJECT</span><h2>《基于智能优化的内河纯电动船舶绿色航行研究》</h2><dl><div><dt>所属单位</dt><dd>上海海事大学</dd></div><div><dt>项目计划</dt><dd>“千企百港”社会实践项目</dd></div><div><dt>核心方法</dt><dd>能源建模 · 碳排评估 · 差分进化优化</dd></div></dl></article></section>
 <section class="card model-note"><div><span class="kicker">OPEN MODEL</span><h2>可扩展的研究模型</h2></div><p>能源价格、排放因子与功率模型参数均采用独立配置，便于后续接入真实市场 API、船载传感器数据和更精细的水动力模型。</p><a href="/">开始航行评估 →</a></section>
 {% endblock %}
