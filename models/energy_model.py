@@ -33,7 +33,7 @@ def number(payload: dict, key: str) -> float:
 
 def validate_payload(payload: dict, optimization: bool = False) -> list[str]:
     labels = {
-        "cargo_mass": "载货量", "distance": "航程", "speed": "航速",
+        "cargo_mass": "载货量", "speed": "航速",
         "propulsion_power": "推进功率", "battery_capacity": "电池容量",
         "soc_initial": "当前 SOC", "soc_min": "最低 SOC",
         "diesel_consumption": "柴油单位航程消耗", "hybrid_diesel_ratio": "混合动力柴油占比",
